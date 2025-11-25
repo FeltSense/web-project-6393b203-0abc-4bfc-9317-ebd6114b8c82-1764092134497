@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FiMail, FiUser, FiPhone, FiMessageSquare, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { Mail, User, Phone, MessageSquare, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -61,7 +61,7 @@ export default function ContactForm() {
             <div className="space-y-4 pt-8">
               <div className="flex items-start gap-4 group">
                 <div className="w-14 h-14 rounded-2xl bg-pink-500/20 backdrop-blur-sm border border-pink-400/30 flex items-center justify-center flex-shrink-0 group-hover:bg-pink-500/30 transition-all duration-300">
-                  <FiMail className="w-6 h-6 text-pink-400" />
+                  <Mail className="w-6 h-6 text-pink-400" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-1">Email Us</h3>
@@ -71,7 +71,7 @@ export default function ContactForm() {
 
               <div className="flex items-start gap-4 group">
                 <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/30 transition-all duration-300">
-                  <FiMessageSquare className="w-6 h-6 text-cyan-400" />
+                  <MessageSquare className="w-6 h-6 text-cyan-400" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-1">Live Chat</h3>
@@ -111,7 +111,7 @@ export default function ContactForm() {
               {status === 'success' ? (
                 <div className="text-center py-12 space-y-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto">
-                    <FiCheckCircle className="w-10 h-10 text-white" />
+                    <CheckCircle className="w-10 h-10 text-white" />
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-3">
@@ -144,7 +144,7 @@ export default function ContactForm() {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <FiUser className="w-5 h-5 text-slate-400" />
+                        <User className="w-5 h-5 text-slate-400" />
                       </div>
                       <input
                         type="text"
@@ -164,7 +164,7 @@ export default function ContactForm() {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <FiMail className="w-5 h-5 text-slate-400" />
+                        <Mail className="w-5 h-5 text-slate-400" />
                       </div>
                       <input
                         type="email"
@@ -184,7 +184,7 @@ export default function ContactForm() {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <FiPhone className="w-5 h-5 text-slate-400" />
+                        <Phone className="w-5 h-5 text-slate-400" />
                       </div>
                       <input
                         type="tel"
@@ -203,7 +203,7 @@ export default function ContactForm() {
                     </label>
                     <div className="relative">
                       <div className="absolute top-4 left-4 pointer-events-none">
-                        <FiMessageSquare className="w-5 h-5 text-slate-400" />
+                        <MessageSquare className="w-5 h-5 text-slate-400" />
                       </div>
                       <textarea
                         id="message"
@@ -219,7 +219,7 @@ export default function ContactForm() {
                   {/* Error Message */}
                   {status === 'error' && (
                     <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-xl p-4">
-                      <FiAlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                      <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
                       <p className="text-sm text-red-600">
                         Something went wrong. Please try again.
                       </p>
@@ -240,7 +240,7 @@ export default function ContactForm() {
                     ) : (
                       <>
                         <span>Send Message</span>
-                        <FiSend className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </>
                     )}
                   </button>
