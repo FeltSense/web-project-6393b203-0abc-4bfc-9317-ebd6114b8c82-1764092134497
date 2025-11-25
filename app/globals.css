@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🎨 DESIGN CONTRACT - Brand Colors & Fonts */
+:root {
+  /* Typography */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  
+  /* Brand Colors - Bold & Vibrant Energy */
+  --brand-primary: theme('colors.pink.600');
+  --brand-primary-hover: theme('colors.pink.700');
+  --brand-secondary: theme('colors.slate.900');
+  --brand-accent: theme('colors.cyan.500');
+  --brand-primary-light: theme('colors.pink.50');
+}
+
+html { 
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: theme('colors.slate.600');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: theme('colors.slate.900');
+}
+
+/* 🎨 DESIGN CONTRACT ENFORCED CLASSES */
+/* Use these in components for consistency! */
+.text-brand-primary { 
+  color: var(--brand-primary); 
+}
+
+.bg-brand-primary { 
+  background-color: var(--brand-primary); 
+}
+
+.bg-brand-primary-light { 
+  background-color: var(--brand-primary-light); 
+}
+
+.border-brand-primary { 
+  border-color: var(--brand-primary); 
+}
+
+.hover\:bg-brand-primary-hover:hover {
+  background-color: var(--brand-primary-hover);
+}
+
+/* Premium Button Styles */
+.btn-primary {
+  @apply bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-outline {
+  @apply bg-transparent border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white font-semibold rounded-xl px-8 py-4 transition-all duration-300;
+}
+
+/* Premium Card Styles */
+.card-premium {
+  @apply rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500;
+}
+
+/* Gradient Backgrounds */
+.gradient-hero {
+  @apply bg-gradient-to-br from-pink-600 via-pink-700 to-fuchsia-800;
+}
+
+.gradient-accent {
+  @apply bg-gradient-to-r from-cyan-50 to-pink-50;
+}
+
+/* Typography Utilities */
+.heading-xl {
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-bold tracking-tight text-slate-900;
+}
+
+.heading-md {
+  @apply text-xl md:text-2xl font-semibold text-slate-900;
+}
+
+.body-text {
+  @apply font-normal leading-relaxed text-slate-600;
+}
+
+/* Section Spacing */
+.section-padding {
+  @apply py-24 md:py-32;
+}
+
+.container-premium {
+  @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+}
+
+/* Smooth Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accent Glow Effect */
+.glow-accent {
+  box-shadow: 0 0 40px rgba(236, 72, 153, 0.3);
+}
+
+/* Interactive Elements */
+.interactive-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.slate.100');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.pink.600');
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.pink.700');
+}
+
+/* Selection Color */
+::selection {
+  background-color: theme('colors.pink.600');
+  color: white;
+}
+
+::-moz-selection {
+  background-color: theme('colors.pink.600');
+  color: white;
+}
